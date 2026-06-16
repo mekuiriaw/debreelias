@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Debre Elias Woreda | ደብረ ኤልያስ ወረዳ – Official Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;700&family=Noto+Sans+Ethiopic:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --gold:        #C9933A;
+      --gold-light:  #E8B86D;
+      --deep-red:    #8B2020;
+      --green:       #2D6A4F;
+      --green-light: #40916C;
+      --earth:       #3E2723;
+      --cream:       #FDF6EC;
+      --off-white:   #F5EDD8;
+      --dark:        #1A1008;
+      --grey:        #6B5E4E;
+      --border:      rgba(201,147,58,0.25);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* ─── DECORATIVE PATTERN ─── */
+    .pattern-bg {
+      background-image:
+        repeating-linear-gradient(45deg,
+          rgba(201,147,58,.06) 0, rgba(201,147,58,.06) 1px,
+          transparent 0, transparent 50%),
+        repeating-linear-gradient(-45deg,
+          rgba(201,147,58,.06) 0, rgba(201,147,58,.06) 1px,
+          transparent 0, transparent 50%);
+      background-size: 20px 20px;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(26,16,8,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 64px;
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .nav-emblem {
+      width: 40px; height: 40px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; color: var(--gold);
+      font-family: 'Noto Sans Ethiopic', sans-serif;
+      flex-shrink: 0;
+    }
+    .nav-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px; font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1.2;
+    }
+    .nav-title span { display: block; font-size: 11px; color: rgba(255,255,255,.5); font-family:'Lato',sans-serif; font-weight:300; letter-spacing:1px; text-transform:uppercase; }
+    .nav-links { display: flex; gap: 6px; }
+    .nav-links a {
+      color: rgba(255,255,255,.75);
+      text-decoration: none; font-size: 13px; letter-spacing: .5px;
+      padding: 6px 14px; border-radius: 3px;
+      transition: all .2s;
+    }
+    .nav-links a:hover { color: var(--gold-light); background: rgba(201,147,58,.1); }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(to bottom, rgba(26,16,8,.65) 0%, rgba(26,16,8,.4) 50%, rgba(26,16,8,.75) 100%),
+        url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Blue_Nile_or_Abay_River.jpg/1280px-Blue_Nile_or_Abay_River.jpg') center/cover no-repeat;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 100px 24px 60px;
+      position: relative;
+    }
+    .hero-inner { max-width: 780px; }
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+      padding: 6px 18px; margin-bottom: 28px;
+      font-family: 'Lato', sans-serif; font-weight: 700;
+    }
+    .hero-amharic {
+      font-family: 'Noto Sans Ethiopic', sans-serif;
+      font-size: clamp(36px, 6vw, 64px);
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 20px rgba(0,0,0,.5);
+    }
+    .hero-english {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 4vw, 40px);
+      color: var(--gold-light);
+      font-weight: 700; margin-bottom: 20px;
+    }
+    .hero-tagline {
+      font-size: 16px; color: rgba(255,255,255,.8);
+      line-height: 1.7; max-width: 560px; margin: 0 auto 40px;
+    }
+    .hero-stats {
+      display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat-num { font-size: 28px; font-weight: 700; color: var(--gold-light); font-family:'Playfair Display',serif; }
+    .hero-stat-label { font-size: 11px; color: rgba(255,255,255,.6); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 2px; }
+    .hero-cta {
+      display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+    }
+    .btn {
+      padding: 13px 30px; font-size: 13px; letter-spacing: 1px;
+      text-transform: uppercase; font-weight: 700; cursor: pointer;
+      text-decoration: none; border-radius: 2px; transition: all .25s;
+      display: inline-block;
+    }
+    .btn-primary {
+      background: var(--gold); color: var(--dark);
+      border: 2px solid var(--gold);
+    }
+    .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
+    .btn-outline {
+      background: transparent; color: #fff;
+      border: 2px solid rgba(255,255,255,.5);
+    }
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+    .hero-scroll {
+      position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+      color: rgba(255,255,255,.4); font-size: 12px; letter-spacing: 2px;
+      text-transform: uppercase; animation: bounce 2s infinite;
+    }
+    @keyframes bounce { 0%,100%{ transform:translateX(-50%) translateY(0)} 50%{ transform:translateX(-50%) translateY(6px)} }
+
+    /* ─── SECTION COMMONS ─── */
+    section { padding: 90px 24px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); font-weight: 700; margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 42px); font-weight: 900;
+      color: var(--earth); line-height: 1.2; margin-bottom: 18px;
+    }
+    .section-title.light { color: #fff; }
+    .section-intro {
+      font-size: 16px; line-height: 1.8; color: var(--grey);
+      max-width: 650px; margin-bottom: 48px;
+    }
+    .divider {
+      width: 60px; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      margin: 16px 0 32px;
+    }
+
+    /* ─── OVERVIEW ─── */
+    #overview { background: var(--cream); }
+    .overview-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .overview-img {
+      border-radius: 4px; overflow: hidden;
+      box-shadow: 12px 12px 0 var(--gold);
+      position: relative;
+    }
+    .overview-img img { width: 100%; display: block; }
+    .overview-img-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: rgba(26,16,8,.75); color: rgba(255,255,255,.8);
+      font-size: 12px; padding: 8px 14px; letter-spacing: .5px;
+    }
+    .info-cards {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+      margin-top: 32px;
+    }
+    .info-card {
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      padding: 18px 20px; border-radius: 2px;
+    }
+    .info-card-label { font-size: 10px; letter-spacing: 2px; text-transform:uppercase; color:var(--grey); margin-bottom: 4px; }
+    .info-card-val { font-size: 16px; font-weight: 700; color: var(--earth); font-family:'Playfair Display',serif; }
+
+    /* ─── FACTS STRIP ─── */
+    #facts-strip {
+      background: var(--earth);
+      padding: 50px 24px;
+    }
+    .facts-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+    }
+    .fact-box {
+      text-align: center; padding: 36px 20px;
+      border-right: 1px solid rgba(201,147,58,.2);
+    }
+    .fact-box:last-child { border-right: none; }
+    .fact-num { font-family:'Playfair Display',serif; font-size: 42px; font-weight:900; color:var(--gold-light); }
+    .fact-unit { font-size: 18px; color:var(--gold); }
+    .fact-desc { font-size: 13px; color: rgba(255,255,255,.55); letter-spacing:1px; text-transform:uppercase; margin-top:6px; }
+
+    /* ─── GEOGRAPHY ─── */
+    #geography { background: var(--off-white); }
+    .geo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .geo-map {
+      background: #1a3a2a;
+      border-radius: 4px; padding: 32px;
+      position: relative; overflow: hidden;
+    }
+    .geo-map-title { color: var(--gold-light); font-family:'Playfair Display',serif; font-size:20px; margin-bottom:20px; }
+    .border-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.08);
+      color: rgba(255,255,255,.8); font-size: 14px;
+    }
+    .border-arrow {
+      width: 32px; height: 32px;
+      background: rgba(201,147,58,.2);
+      border: 1px solid rgba(201,147,58,.4);
+      border-radius: 50%; display:flex;align-items:center;justify-content:center;
+      font-size:16px; flex-shrink:0;
+    }
+    .geo-facts { list-style: none; }
+    .geo-facts li {
+      padding: 16px 0; border-bottom: 1px solid var(--border);
+      display: flex; gap: 14px; font-size: 15px; line-height:1.6;
+    }
+    .geo-facts li::before { content:'◆'; color:var(--gold); flex-shrink:0; margin-top:2px; font-size:10px; }
+
+    /* ─── TOURISM ─── */
+    #tourism { background: var(--cream); }
+    .tourism-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+    }
+    .tourism-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 4px; overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .tourism-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(62,39,35,.15); }
+    .tourism-icon {
+      height: 120px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 52px;
+    }
+    .tourism-icon.church { background: linear-gradient(135deg, #3E2723, #6D4C41); }
+    .tourism-icon.nature { background: linear-gradient(135deg, #1B5E20, #33691E); }
+    .tourism-icon.water  { background: linear-gradient(135deg, #01579B, #0277BD); }
+    .tourism-icon.hist   { background: linear-gradient(135deg, #4A148C, #6A1B9A); }
+    .tourism-icon.mine   { background: linear-gradient(135deg, #37474F, #546E7A); }
+    .tourism-icon.pillar { background: linear-gradient(135deg, #BF360C, #D84315); }
+    .tourism-body { padding: 22px 22px 28px; }
+    .tourism-name { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--earth); margin-bottom:8px; }
+    .tourism-desc { font-size:14px; color:var(--grey); line-height:1.7; }
+
+    /* ─── AGRICULTURE ─── */
+    #agriculture {
+      background: var(--green);
+      color: #fff;
+    }
+    .agri-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .agri-text .section-intro { color: rgba(255,255,255,.75); }
+    .crop-list { list-style:none; display:grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top:32px; }
+    .crop-list li {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.15);
+      padding: 16px 18px; border-radius:3px;
+      font-size:14px; font-weight:700;
+      display:flex; align-items:center; gap:10px;
+    }
+    .crop-list li span { font-size:22px; }
+    .agri-stats { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .agri-stat-box {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.15);
+      border-top: 3px solid var(--gold);
+      padding: 24px 20px; border-radius:3px; text-align:center;
+    }
+    .agri-stat-num { font-family:'Playfair Display',serif; font-size:32px; font-weight:900; color:var(--gold-light); }
+    .agri-stat-desc { font-size:12px; color:rgba(255,255,255,.6); letter-spacing:1px; text-transform:uppercase; margin-top:6px; }
+
+    /* ─── MINERALS ─── */
+    #minerals { background: var(--off-white); }
+    .minerals-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .mineral-card {
+      background:#fff;
+      border: 1px solid var(--border);
+      border-bottom: 4px solid var(--gold);
+      padding:28px 24px; border-radius:4px; text-align:center;
+    }
+    .mineral-icon { font-size:40px; margin-bottom:12px; }
+    .mineral-name { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--earth); margin-bottom:6px; }
+    .mineral-info { font-size:13px; color:var(--grey); line-height:1.6; }
+
+    /* ─── DEMOGRAPHICS ─── */
+    #demographics { background: var(--earth); color:#fff; }
+    .demo-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:60px; align-items:start; }
+    .demo-chart { }
+    .bar-row { margin-bottom:20px; }
+    .bar-label { font-size:13px; color:rgba(255,255,255,.65); margin-bottom:6px; letter-spacing:.5px; }
+    .bar-track { background:rgba(255,255,255,.08); height:10px; border-radius:5px; overflow:hidden; }
+    .bar-fill { height:100%; border-radius:5px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transition: width 1.2s ease; }
+    .demo-cards { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .demo-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(201,147,58,.2);
+      padding:24px 20px; border-radius:3px;
+    }
+    .demo-card-ico { font-size:28px; margin-bottom:10px; }
+    .demo-card-num { font-family:'Playfair Display',serif; font-size:26px; font-weight:900; color:var(--gold-light); }
+    .demo-card-desc { font-size:12px; color:rgba(255,255,255,.5); letter-spacing:1px; text-transform:uppercase; margin-top:4px; }
+
+    /* ─── SERVICES ─── */
+    #services { background: var(--cream); }
+    .services-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+    .service-card {
+      background:#fff;
+      border:1px solid var(--border); border-radius:4px;
+      padding:30px 22px; text-align:center;
+      transition: all .25s;
+    }
+    .service-card:hover { background: var(--gold); }
+    .service-card:hover .service-title { color:#fff; }
+    .service-card:hover .service-desc { color:rgba(255,255,255,.8); }
+    .service-card:hover .service-ico { filter: none; }
+    .service-ico { font-size:38px; margin-bottom:14px; }
+    .service-title { font-family:'Playfair Display',serif; font-size:16px; font-weight:700; color:var(--earth); margin-bottom:8px; }
+    .service-desc { font-size:13px; color:var(--grey); line-height:1.6; }
+
+    /* ─── ADMINISTRATION ─── */
+    #administration {
+      background: linear-gradient(135deg, #1A1008 0%, #3E2723 100%);
+      color:#fff;
+    }
+    .admin-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; }
+    .admin-list { list-style:none; }
+    .admin-list li {
+      padding:16px 0; border-bottom:1px solid rgba(255,255,255,.08);
+      display:flex; justify-content:space-between; align-items:center;
+      font-size:14px; color:rgba(255,255,255,.8);
+    }
+    .admin-list li strong { color:var(--gold-light); font-family:'Playfair Display',serif; }
+    .kebele-tag {
+      display:inline-block;
+      background:rgba(201,147,58,.15);
+      border:1px solid rgba(201,147,58,.3);
+      color:var(--gold-light);
+      font-size:11px; letter-spacing:1px;
+      padding:3px 10px; border-radius:2px; margin:4px 4px 0 0;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--off-white); }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; }
+    .contact-info { }
+    .contact-item { display:flex; gap:16px; margin-bottom:28px; align-items:flex-start; }
+    .contact-ico {
+      width:44px; height:44px;
+      background:var(--gold);
+      border-radius:50%; display:flex; align-items:center; justify-content:center;
+      font-size:18px; flex-shrink:0; color:#fff;
+    }
+    .contact-detail { font-size:14px; color:var(--grey); line-height:1.7; }
+    .contact-detail strong { display:block; font-size:15px; color:var(--earth); margin-bottom:2px; }
+    .contact-form { }
+    .form-group { margin-bottom:18px; }
+    .form-label { font-size:12px; letter-spacing:1px; text-transform:uppercase; color:var(--grey); font-weight:700; margin-bottom:6px; display:block; }
+    .form-input {
+      width:100%; padding:12px 16px;
+      border:1px solid var(--border);
+      background:#fff; color:var(--dark);
+      font-size:14px; font-family:'Lato',sans-serif;
+      border-radius:2px; outline:none;
+      transition: border-color .2s;
+    }
+    .form-input:focus { border-color: var(--gold); }
+    textarea.form-input { resize:vertical; min-height:110px; }
+    .form-btn {
+      background:var(--gold); color:var(--dark);
+      border:none; padding:13px 36px;
+      font-size:13px; letter-spacing:1.5px; text-transform:uppercase; font-weight:700;
+      cursor:pointer; border-radius:2px;
+      transition: background .2s;
+    }
+    .form-btn:hover { background:var(--gold-light); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark);
+      padding: 50px 24px 28px;
+      border-top: 2px solid var(--gold);
+    }
+    .footer-inner { max-width:1100px; margin:0 auto; }
+    .footer-top {
+      display:grid; grid-template-columns:2fr 1fr 1fr; gap:48px;
+      padding-bottom:36px; border-bottom:1px solid rgba(255,255,255,.08);
+      margin-bottom:28px;
+    }
+    .footer-brand-name { font-family:'Playfair Display',serif; font-size:20px; color:var(--gold-light); margin-bottom:12px; }
+    .footer-brand-amharic { font-family:'Noto Sans Ethiopic',sans-serif; font-size:18px; color:rgba(255,255,255,.4); margin-bottom:14px; }
+    .footer-about { font-size:14px; color:rgba(255,255,255,.4); line-height:1.8; }
+    .footer-col-title { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:18px; }
+    .footer-links { list-style:none; }
+    .footer-links li { margin-bottom:10px; }
+    .footer-links a { color:rgba(255,255,255,.5); text-decoration:none; font-size:14px; transition:color .2s; }
+    .footer-links a:hover { color:var(--gold-light); }
+    .footer-bottom { display:flex; justify-content:space-between; align-items:center; }
+    .footer-copy { font-size:13px; color:rgba(255,255,255,.3); }
+    .footer-flag { display:flex; gap:0; height:20px; border-radius:2px; overflow:hidden; }
+    .flag-strip { width:30px; height:20px; }
+
+    /* ─── ANNOUNCE BANNER ─── */
+    .announce {
+      background: var(--deep-red); color:#fff;
+      text-align:center; padding:10px 24px;
+      font-size:13px; letter-spacing:.5px;
+    }
+    .announce a { color:var(--gold-light); text-decoration:none; font-weight:700; }
+
+    /* ─── NOTABLE PEOPLE ─── */
+    #notable { background: linear-gradient(160deg, #1A1008 0%, #2C1A0E 50%, #3E2723 100%); color:#fff; }
+    .notable-intro { color:rgba(255,255,255,.65); }
+    .people-grid { display: grid; grid-template-columns: repeat(3,1fr); gap:30px; margin-top:10px; }
+    .person-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(201,147,58,.2);
+      border-radius: 6px; overflow: hidden;
+      transition: transform .3s, box-shadow .3s, border-color .3s;
+      position: relative;
+    }
+    .person-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(0,0,0,.5);
+      border-color: rgba(201,147,58,.6);
+    }
+    .person-card::before {
+      content: '';
+      position: absolute; top:0; left:0; right:0; height:3px;
+    }
+    .person-card.patriarch::before { background: linear-gradient(90deg,#8B2020,#C9933A); }
+    .person-card.author::before    { background: linear-gradient(90deg,#1B5E20,#4CAF50); }
+    .person-card.poet::before      { background: linear-gradient(90deg,#0D47A1,#42A5F5); }
+    .person-card.patriot::before   { background: linear-gradient(90deg,#4A148C,#9C27B0); }
+    .person-avatar {
+      width:100%; height:160px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .person-avatar.patriarch { background: linear-gradient(135deg, #3B0000, #8B2020); }
+    .person-avatar.author    { background: linear-gradient(135deg, #0A1F0A, #1B5E20); }
+    .person-avatar.poet      { background: linear-gradient(135deg, #0A1428, #0D47A1); }
+    .person-avatar.patriot   { background: linear-gradient(135deg, #1A0A2E, #4A148C); }
+    .person-icon { font-size:64px; opacity:.9; }
+    .person-era {
+      position: absolute; bottom:10px; right:12px;
+      background: rgba(0,0,0,.5);
+      color: rgba(255,255,255,.7);
+      font-size:10px; letter-spacing:1px;
+      padding: 3px 10px; border-radius: 2px;
+      font-family:'Lato',sans-serif;
+    }
+    .person-body { padding: 22px 22px 28px; }
+    .person-role {
+      font-size:10px; letter-spacing:2px; text-transform:uppercase;
+      margin-bottom:6px; font-weight:700;
+    }
+    .person-role.patriarch { color:#E57373; }
+    .person-role.author    { color:#81C784; }
+    .person-role.poet      { color:#64B5F6; }
+    .person-role.patriot   { color:#CE93D8; }
+    .person-name {
+      font-family:'Playfair Display',serif;
+      font-size:20px; font-weight:900;
+      color:#fff; margin-bottom:4px; line-height:1.2;
+    }
+    .person-amharic {
+      font-family:'Noto Sans Ethiopic',sans-serif;
+      font-size:13px; color:rgba(255,255,255,.4);
+      margin-bottom:14px;
+    }
+    .person-dates {
+      font-size:12px; color:var(--gold);
+      margin-bottom:12px; font-weight:700; letter-spacing:.5px;
+    }
+    .person-bio {
+      font-size:13.5px; color:rgba(255,255,255,.65);
+      line-height:1.8; margin-bottom:16px;
+    }
+    .person-tags { display:flex; flex-wrap:wrap; gap:6px; }
+    .person-tag {
+      font-size:10px; letter-spacing:1px; text-transform:uppercase; font-weight:700;
+      padding:3px 10px; border-radius:2px; border:1px solid;
+    }
+    .person-tag.patriarch { background:rgba(139,32,32,.2); border-color:rgba(139,32,32,.5); color:#EF9A9A; }
+    .person-tag.author    { background:rgba(27,94,32,.2);  border-color:rgba(27,94,32,.5);  color:#A5D6A7; }
+    .person-tag.poet      { background:rgba(13,71,161,.2); border-color:rgba(13,71,161,.5); color:#90CAF9; }
+    .person-tag.patriot   { background:rgba(74,20,140,.2); border-color:rgba(74,20,140,.5); color:#CE93D8; }
+    .person-quote {
+      border-left:3px solid var(--gold);
+      padding:10px 14px; margin:14px 0;
+      background:rgba(201,147,58,.06);
+      border-radius:0 3px 3px 0;
+      font-size:13px; color:rgba(255,255,255,.55);
+      font-style:italic; line-height:1.7;
+    }
+    .timeline-strip {
+      margin-top:60px;
+      position:relative;
+      padding:40px 0;
+    }
+    .timeline-line {
+      position:absolute; top:50%; left:0; right:0;
+      height:2px; background:linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .timeline-events {
+      display:flex; justify-content:space-between; align-items:center;
+      position:relative; z-index:1;
+    }
+    .timeline-event { text-align:center; max-width:120px; }
+    .timeline-dot {
+      width:14px; height:14px;
+      background:var(--gold); border-radius:50%;
+      border:3px solid var(--dark);
+      margin:0 auto 8px;
+      box-shadow:0 0 0 3px rgba(201,147,58,.3);
+    }
+    .timeline-year { font-size:13px; font-weight:700; color:var(--gold-light); margin-bottom:4px; }
+    .timeline-desc { font-size:11px; color:rgba(255,255,255,.4); line-height:1.5; }
+    .history-banner {
+      background: rgba(201,147,58,.08);
+      border:1px solid rgba(201,147,58,.2);
+      border-radius:4px; padding:28px 32px;
+      margin-top:48px;
+      display:flex; gap:24px; align-items:center;
+    }
+    .history-banner-ico { font-size:42px; flex-shrink:0; }
+    .history-banner-text { font-size:15px; color:rgba(255,255,255,.7); line-height:1.8; }
+    .history-banner-text strong { color:var(--gold-light); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .overview-grid, .geo-grid, .agri-grid, .demo-grid, .contact-grid, .admin-grid { grid-template-columns:1fr; }
+      .facts-grid { grid-template-columns:repeat(2,1fr); }
+      .tourism-grid { grid-template-columns:repeat(2,1fr); }
+      .services-grid { grid-template-columns:repeat(2,1fr); }
+      .minerals-grid { grid-template-columns:repeat(2,1fr); }
+      .people-grid { grid-template-columns:repeat(2,1fr); }
+      .footer-top { grid-template-columns:1fr; gap:32px; }
+      nav { padding:0 20px; }
+      .nav-links { display:none; }
+      .timeline-events { flex-direction:column; gap:24px; }
+      .timeline-line { display:none; }
+    }
+    @media (max-width:600px){
+      .tourism-grid,.services-grid,.minerals-grid,.demo-cards,.crop-list { grid-template-columns:1fr; }
+      .facts-grid { grid-template-columns:repeat(2,1fr); }
+      .info-cards { grid-template-columns:1fr; }
+      section { padding:60px 18px; }
+    }
+
+    /* ─── ANIMATIONS ─── */
+    .fade-in { opacity:0; transform:translateY(28px); transition: opacity .7s, transform .7s; }
+    .fade-in.visible { opacity:1; transform:translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="announce">
+  📢 Welcome to the official website of Debre Elias Woreda, Misraq Gojjam Zone, Amhara Region, Ethiopia &nbsp;|&nbsp;
+  <a href="#contact">Contact the Office →</a>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-emblem">ደ</div>
+    <div class="nav-title">
+      Debre Elias Woreda
+      <span>ደብረ ኤልያስ ወረዳ</span>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#overview">Overview</a>
+    <a href="#geography">Geography</a>
+    <a href="#tourism">Tourism</a>
+    <a href="#agriculture">Agriculture</a>
+    <a href="#notable">Notable People</a>
+    <a href="#demographics">People</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Amhara Region · Misraq Gojjam Zone · Ethiopia</div>
+    <div class="hero-amharic">ደብረ ኤልያስ ወረዳ</div>
+    <div class="hero-english">Debre Elias Woreda</div>
+    <p class="hero-tagline">
+      A land of fertile plateaus, sacred monasteries, and the mighty Abay River —
+      nestled in the heart of East Gojjam, where heritage and opportunity flourish together.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">82,150</div>
+        <div class="hero-stat-label">Population (2007 Census)</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">1,165 <span style="font-size:18px">km²</span></div>
+        <div class="hero-stat-label">Total Area</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">335 km</div>
+        <div class="hero-stat-label">From Addis Ababa</div>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <a href="#overview" class="btn btn-primary">Explore Woreda</a>
+      <a href="#contact" class="btn btn-outline">Contact Office</a>
+    </div>
+  </div>
+  <div class="hero-scroll">▾ Scroll</div>
+</section>
+
+<!-- OVERVIEW -->
+<section id="overview">
+  <div class="section-inner">
+    <div class="overview-grid fade-in">
+      <div>
+        <p class="section-label">Who We Are</p>
+        <h2 class="section-title">An Overview of<br>Debre Elias Woreda</h2>
+        <div class="divider"></div>
+        <p style="font-size:15px;line-height:1.85;color:var(--grey);margin-bottom:16px;">
+          Debre Elias is one of the woredas (districts) in the Amhara National Regional State of Ethiopia,
+          located within the Misraq Gojjam (East Gojjam) Zone. The woreda was formerly part of Machakel
+          Woreda before being established as its own administrative unit.
+        </p>
+        <p style="font-size:15px;line-height:1.85;color:var(--grey);margin-bottom:24px;">
+          Its strategic position along the Blue Nile (Abay River) basin, combined with its rich soils,
+          diverse mineral deposits, and vibrant cultural heritage, make it one of the most unique and
+          resource-rich woredas in the Gojjam highlands.
+        </p>
+        <div class="info-cards">
+          <div class="info-card">
+            <div class="info-card-label">Region</div>
+            <div class="info-card-val">Amhara</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-label">Zone</div>
+            <div class="info-card-val">Misraq Gojjam</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-label">Main Town</div>
+            <div class="info-card-val">Elias (Debre Elias)</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-label">Distance from Addis</div>
+            <div class="info-card-val">~335 km NW</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-label">Altitude Range</div>
+            <div class="info-card-val">800 – 2,200 m</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-label">Mean Annual Rainfall</div>
+            <div class="info-card-val">1,150 mm</div>
+          </div>
+        </div>
+      </div>
+      <div class="overview-img">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/View_of_Lake_Tana_%28looking_northeast%29_from_a_hillside_near_Bahir_Dar.jpg/1280px-View_of_Lake_Tana_%28looking_northeast%29_from_a_hillside_near_Bahir_Dar.jpg"
+          alt="East Gojjam highlands landscape"
+          onerror="this.src='https://via.placeholder.com/600x450/2D6A4F/ffffff?text=Debre+Elias+Woreda'"
+        />
+        <div class="overview-img-caption">🏔️ The fertile highlands of East Gojjam, Amhara Region</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACTS STRIP -->
+<div id="facts-strip">
+  <div class="facts-grid">
+    <div class="fact-box fade-in">
+      <div class="fact-num">82<span class="fact-unit">K+</span></div>
+      <div class="fact-desc">Population</div>
+    </div>
+    <div class="fact-box fade-in">
+      <div class="fact-num">1,166<span class="fact-unit"> km²</span></div>
+      <div class="fact-desc">Total Area</div>
+    </div>
+    <div class="fact-box fade-in">
+      <div class="fact-num">98<span class="fact-unit">%</span></div>
+      <div class="fact-desc">Orthodox Christian</div>
+    </div>
+    <div class="fact-box fade-in">
+      <div class="fact-num">18<span class="fact-unit">–27°C</span></div>
+      <div class="fact-desc">Mean Temperature</div>
+    </div>
+  </div>
+</div>
+
+<!-- GEOGRAPHY -->
+<section id="geography">
+  <div class="section-inner">
+    <p class="section-label">Location & Boundaries</p>
+    <h2 class="section-title">Geography of Debre Elias</h2>
+    <div class="divider"></div>
+    <div class="geo-grid fade-in">
+      <div class="geo-map">
+        <div class="geo-map-title">📍 Bordering Areas</div>
+        <div class="border-item">
+          <div class="border-arrow">🌊</div>
+          <div><strong style="color:var(--gold-light)">South & West:</strong> Abay (Blue Nile) River — natural border with Oromia Region</div>
+        </div>
+        <div class="border-item">
+          <div class="border-arrow">🧭</div>
+          <div><strong style="color:var(--gold-light)">Northwest:</strong> Mirab Gojjam Zone</div>
+        </div>
+        <div class="border-item">
+          <div class="border-arrow">🏔</div>
+          <div><strong style="color:var(--gold-light)">North:</strong> Machakel Woreda</div>
+        </div>
+        <div class="border-item">
+          <div class="border-arrow">🌄</div>
+          <div><strong style="color:var(--gold-light)">East:</strong> Guzamn Woreda</div>
+        </div>
+        <div style="margin-top:20px; padding:16px; background:rgba(201,147,58,.1); border:1px solid rgba(201,147,58,.25); border-radius:3px; color:rgba(255,255,255,.7); font-size:13px; line-height:1.7;">
+          🌐 Coordinates: approx. <strong style="color:var(--gold-light)">10°19′N 37°43′E</strong><br/>
+          The Abay River forms a dramatic natural boundary, cutting the woreda off from Oromia to the south and west — creating a stunning riverside landscape.
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--earth);margin-bottom:16px;">Physical Features</h3>
+        <ul class="geo-facts">
+          <li>The terrain varies from <strong>lowland river valleys</strong> along the Abay to highland plateaus reaching over 2,200 m, creating diverse micro-climates and ecosystems.</li>
+          <li>The <strong>Red soils</strong> dominate the district and are described as moderately fertile — supporting diverse smallholder agriculture across the woreda.</li>
+          <li>Population density ranges from <strong>100 to 120 people per km²</strong>, with settlements concentrated on the more fertile upper highland areas.</li>
+          <li>The woreda enjoys a <strong>mean annual rainfall of 1,150 mm</strong>, feeding the agricultural activity that forms the backbone of the local economy.</li>
+          <li>Multiple <strong>natural springs and seasonal rivers</strong> traverse the woreda, including the famous "Nile Springs" — a key ecotourism attraction.</li>
+          <li>The Abay River gorge provides a <strong>dramatic landscape</strong> that is both a natural barrier and a significant scenic and hydrological feature of the region.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOURISM -->
+<section id="tourism">
+  <div class="section-inner">
+    <p class="section-label">Heritage & Attractions</p>
+    <h2 class="section-title">Tourism &amp; Cultural Sites</h2>
+    <div class="divider"></div>
+    <p class="section-intro">
+      Debre Elias Woreda is home to a remarkable collection of historical churches, natural wonders,
+      and cultural landmarks that attract visitors from across Ethiopia and beyond.
+    </p>
+    <div class="tourism-grid fade-in">
+      <div class="tourism-card">
+        <div class="tourism-icon church">⛪</div>
+        <div class="tourism-body">
+          <div class="tourism-name">Selassie Monastery</div>
+          <div class="tourism-desc">One of the most revered religious sites in the woreda. This ancient monastery dedicated to the Holy Trinity draws pilgrims and tourists throughout the year, especially during major Orthodox feasts.</div>
+        </div>
+      </div>
+      <div class="tourism-card">
+        <div class="tourism-icon church">🕍</div>
+        <div class="tourism-body">
+          <div class="tourism-name">Debre Elias Church</div>
+          <div class="tourism-desc">The namesake church of the woreda itself — a historically significant Ethiopian Orthodox Christian church standing as a spiritual and cultural symbol of the community.</div>
+        </div>
+      </div>
+      <div class="tourism-card">
+        <div class="tourism-icon nature">🌿</div>
+        <div class="tourism-body">
+          <div class="tourism-name">Debre Genet Abo Church</div>
+          <div class="tourism-desc">A sacred church surrounded by ancient trees and natural forest, offering a peaceful retreat and a window into Ethiopia's rich Orthodox heritage and monastic traditions.</div>
+        </div>
+      </div>
+      <div class="tourism-card">
+        <div class="tourism-icon hist">🏛</div>
+        <div class="tourism-body">
+          <div class="tourism-name">Abba Fekikh Yassin Grave</div>
+          <div class="tourism-desc">A historically important grave site associated with a revered Muslim holy man — testament to the woreda's inter-faith heritage and peaceful coexistence through centuries.</div>
+        </div>
+      </div>
+      <div class="tourism-card">
+        <div class="tourism-icon water">💧</div>
+        <div class="tourism-body">
+          <div class="tourism-name">Forty-Four Ponds & Nile Springs</div>
+          <div class="tourism-desc">A stunning natural landscape featuring 44 traditional ponds and natural springs that feed into the Blue Nile system — a unique ecological and scenic wonder attracting daily visitors.</div>
+        </div>
+      </div>
+      <div class="tourism-card">
+        <div class="tourism-icon pillar">🗿</div>
+        <div class="tourism-body">
+          <div class="tourism-name">Abba Tekle-Alpha Pillar</div>
+          <div class="tourism-desc">An ancient stone pillar commemorating the legendary Abba Tekle-Alpha — a remarkable historic landmark that connects the woreda to Ethiopia's long and storied past.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGRICULTURE -->
+<section id="agriculture">
+  <div class="section-inner">
+    <div class="agri-grid fade-in">
+      <div class="agri-text">
+        <p class="section-label" style="color:var(--gold-light)">Economy</p>
+        <h2 class="section-title light">Agriculture &<br>Livelihoods</h2>
+        <div class="divider"></div>
+        <p class="section-intro">
+          Agriculture is the primary economic activity in Debre Elias Woreda.
+          Smallholder farmers cultivate diverse crops across the fertile highlands,
+          supported by adequate rainfall and moderately rich soils.
+        </p>
+        <p style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:24px;">
+          Wheat is one of the most important crops produced in the woreda, with farmers earning
+          a positive net profit per hectare. The woreda also produces gums and resins as important
+          natural resource commodities alongside food crops.
+        </p>
+        <ul class="crop-list">
+          <li><span>🌾</span> Wheat</li>
+          <li><span>🌽</span> Maize</li>
+          <li><span>🫘</span> Teff</li>
+          <li><span>🥜</span> Barley</li>
+          <li><span>🌿</span> Gums & Resins</li>
+          <li><span>🥬</span> Vegetables</li>
+        </ul>
+      </div>
+      <div class="agri-stats">
+        <div class="agri-stat-box">
+          <div class="agri-stat-num">1,150 mm</div>
+          <div class="agri-stat-desc">Annual Rainfall</div>
+        </div>
+        <div class="agri-stat-box">
+          <div class="agri-stat-num">9,814</div>
+          <div class="agri-stat-desc">Rural Households</div>
+        </div>
+        <div class="agri-stat-box">
+          <div class="agri-stat-num">100–120</div>
+          <div class="agri-stat-desc">People per km²</div>
+        </div>
+        <div class="agri-stat-box">
+          <div class="agri-stat-num">18–27°C</div>
+          <div class="agri-stat-desc">Temperature Range</div>
+        </div>
+        <div class="agri-stat-box" style="grid-column:span 2;">
+          <div class="agri-stat-num" style="font-size:22px;">Birr 3,460 / Hectare</div>
+          <div class="agri-stat-desc">Average Wheat Net Profit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MINERALS -->
+<section id="minerals">
+  <div class="section-inner">
+    <p class="section-label">Natural Resources</p>
+    <h2 class="section-title">Mineral Wealth</h2>
+    <div class="divider"></div>
+    <p class="section-intro">
+      Debre Elias Woreda is exceptionally rich in industrial and construction minerals,
+      with significant deposits covering thousands of hectares.
+    </p>
+    <div class="minerals-grid fade-in">
+      <div class="mineral-card">
+        <div class="mineral-icon">🪨</div>
+        <div class="mineral-name">Granite</div>
+        <div class="mineral-info">Coverage of over 4,500 ha — a premier industrial and construction mineral used across Ethiopia's building sector.</div>
+      </div>
+      <div class="mineral-card">
+        <div class="mineral-icon">💎</div>
+        <div class="mineral-name">Quartz</div>
+        <div class="mineral-info">Covering approximately 3,000 ha — quartz is a key industrial mineral with applications in glass, electronics, and construction.</div>
+      </div>
+      <div class="mineral-card">
+        <div class="mineral-icon">🏗</div>
+        <div class="mineral-name">Sandstone</div>
+        <div class="mineral-info">Covering more than 4,800 ha — sandstone is widely used as a construction material in buildings and infrastructure projects.</div>
+      </div>
+      <div class="mineral-card">
+        <div class="mineral-icon">⚫</div>
+        <div class="mineral-name">Coal</div>
+        <div class="mineral-info">Natural coal deposits present in the woreda — an energy resource with potential for local industrial use.</div>
+      </div>
+      <div class="mineral-card">
+        <div class="mineral-icon">⚙️</div>
+        <div class="mineral-name">Iron</div>
+        <div class="mineral-info">Iron deposits found in the woreda, representing a metallic mineral resource with long-term industrial development potential.</div>
+      </div>
+      <div class="mineral-card">
+        <div class="mineral-icon">🌳</div>
+        <div class="mineral-name">Gums & Resins</div>
+        <div class="mineral-info">Forest-based gums and resins are significant natural commodities harvested from the woreda's natural woodlands.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTABLE PEOPLE -->
+<section id="notable" class="pattern-bg">
+  <div class="section-inner">
+    <p class="section-label" style="color:var(--gold-light)">Sons & Daughters of Debre Elias</p>
+    <h2 class="section-title light">Notable People in History</h2>
+    <div class="divider"></div>
+    <p class="section-intro notable-intro">
+      The soil of Debre Elias Woreda has nurtured some of Ethiopia's most towering figures —
+      a Patriarch who shaped the Orthodox Church, a novelist who gave Ethiopia its greatest love story,
+      a pioneer of Amharic theatre, and brave patriots who fought for their nation's freedom.
+    </p>
+
+    <div class="people-grid fade-in">
+
+      <!-- 1. ABUNE TEWOFLOS -->
+      <div class="person-card patriarch">
+        <div class="person-avatar patriarch">
+          <div class="person-icon">✝</div>
+          <div class="person-era">1910 – 1979</div>
+        </div>
+        <div class="person-body">
+          <div class="person-role patriarch">Ethiopian Orthodox Patriarch</div>
+          <div class="person-name">Abune Tewoflos</div>
+          <div class="person-amharic">አቡነ ቴዎፍሎስ</div>
+          <div class="person-dates">Born: April 24, 1910 · Died: July 14, 1979</div>
+          <p class="person-bio">
+            Born <em>Mel'ektu Wolde-Mariam</em> in the <strong style="color:var(--gold-light)">Parish of Debre Elias</strong>, Gojjam Province,
+            Abune Tewoflos became the <strong style="color:var(--gold-light)">2nd Patriarch of the Ethiopian Orthodox Tewahedo Church</strong>,
+            enthroned on May 9, 1971. He began his sacred journey studying at the Monastery of Debre Elias
+            and at the Addis Alem St. Mary of Zion Monastery before receiving monastic orders at Debre Libanos in 1937.
+          </p>
+          <div class="person-quote">
+            "He was born in the Parish of Debre Elias, and it was here that the roots of his
+            extraordinary faith and leadership were first planted." — Ecclesiastical historians
+          </div>
+          <p class="person-bio">
+            Chosen as one of only 20 church scholars by Emperor Haile Selassie for modern religious education,
+            he rose to become administrator of the Holy Trinity Cathedral (1942), one of the first five Ethiopian
+            bishops consecrated by the Patriarch of Alexandria (1948), and eventually Patriarch of all Ethiopia.
+            He expanded the Ethiopian church to Trinidad, Guyana, and the United States, and presided over the
+            World Council of Churches meeting in Addis Ababa in 1971. He was tragically murdered by the Derg
+            military junta in 1979. He was later <strong style="color:var(--gold-light)">canonised as a martyr</strong> by the Ethiopian Orthodox Church.
+          </p>
+          <div class="person-tags">
+            <span class="person-tag patriarch">Patriarch</span>
+            <span class="person-tag patriarch">Church Reformer</span>
+            <span class="person-tag patriarch">Martyr & Saint</span>
+            <span class="person-tag patriarch">Debre Elias Born</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. HADDIS ALEMAYEHU -->
+      <div class="person-card author">
+        <div class="person-avatar author">
+          <div class="person-icon">📖</div>
+          <div class="person-era">1910 – 2003</div>
+        </div>
+        <div class="person-body">
+          <div class="person-role author">Novelist · Diplomat · Statesman</div>
+          <div class="person-name">Haddis Alemayehu</div>
+          <div class="person-amharic">ሐዲስ ዓለማየሁ</div>
+          <div class="person-dates">Born: Oct 15, 1910 · Died: Dec 6, 2003 (aged 93)</div>
+          <p class="person-bio">
+            Widely celebrated as the <strong style="color:#A5D6A7">Father of Ethiopian Literature</strong>, Haddis Alemayehu
+            was born near Debre Markos in Gojjam. As a young man, he pursued his early religious
+            and classical education at the <strong style="color:#A5D6A7">Monastery of Debre Elias</strong> — the very spiritual
+            centre of this woreda — where he studied Ge'ez, Kenie (ቅኔ), zema hymns, and poetry,
+            before continuing at Debre Werq and Dima Giorgis.
+          </p>
+          <div class="person-quote">
+            "He studied at the renowned Gojjam monasteries of Debre Elias, Debre Worq, and Dima —
+            laying the foundation for Ethiopia's greatest literary voice." — Ministry of Foreign Affairs, Ethiopia
+          </div>
+          <p class="person-bio">
+            He fought bravely against Italian fascist forces (1935–36), was captured and imprisoned
+            in Italy, and returned a hero in 1943. He served as Ethiopia's <strong style="color:#A5D6A7">Minister of Foreign Affairs
+            (1960–61)</strong> under Emperor Haile Selassie, and as consul in Jerusalem, London, and Washington.
+            His masterpiece novel <em>ፍቅር እስከ መቃብር (Love to the Grave, 1968)</em> remains the most
+            celebrated work of Amharic literature — a sweeping story of love across social class divisions.
+            He received an honorary Doctorate from Addis Ababa University and the Gold Mercury Medal.
+          </p>
+          <div class="person-tags">
+            <span class="person-tag author">Father of Ethiopian Lit.</span>
+            <span class="person-tag author">Foreign Minister</span>
+            <span class="person-tag author">WWII Patriot</span>
+            <span class="person-tag author">Studied at Debre Elias</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. QEGN GETA YOFTAHE NIGUSSIE -->
+      <div class="person-card poet">
+        <div class="person-avatar poet">
+          <div class="person-icon">🎭</div>
+          <div class="person-era">1894 – 1947</div>
+        </div>
+        <div class="person-body">
+          <div class="person-role poet">Playwright · Poet · Pioneer of Ethiopian Theatre</div>
+          <div class="person-name">Qegn Geta Yoftahe Nigussie</div>
+          <div class="person-amharic">ቄኛ ጌታ ዮፍታሄ ኑጉሴ</div>
+          <div class="person-dates">Born: April 21, 1894 · Died: June 8, 1947</div>
+          <p class="person-bio">
+            Born in <strong style="color:#90CAF9">Debre Gennet Elyas (Debre Elias), East Gojjam</strong>, to a church
+            administrator father, Yoftahe Nigussie is one of the founding giants of Ethiopian literary culture.
+            He excelled in his traditional church education — mastering Ge'ez, zema, and qene at
+            extraordinary speed — earning the distinguished title of <em>"Qegn Geta"</em> (Kegnegeta)
+            for his mastery of Ethiopian classical forms.
+          </p>
+          <div class="person-quote">
+            "Qäññ geta Yoftahe Neguse was a prolific writer with a pronounced background in traditional
+            church education and a pioneer of Ethiopian theatre and Amharic drama." — Sewasew Encyclopedia
+          </div>
+          <p class="person-bio">
+            Moving to Addis Ababa at age 14, he became a teacher of Amharic and Music at the prestigious
+            Menelik II and Teferi Mekonnen Schools (from 1916 EC). He wrote many celebrated dramas
+            including <em>Teqem Yalebel, Chewata, Meseker, Yehod Amilaku</em> and many more. He was one
+            of the founders of the <strong style="color:#90CAF9">Ethiopian Patriotic Association (Hagär Fəqər Tiyatər)</strong>
+            before the Italian invasion, and authored the <strong style="color:#90CAF9">Imperial National Anthem of Ethiopia</strong>
+            that was used from 1930 to 1974. He also served as Deputy President of the Judiciary Council
+            of the Ethiopian Parliament (1943–1947).
+          </p>
+          <div class="person-tags">
+            <span class="person-tag poet">Pioneer of Theatre</span>
+            <span class="person-tag poet">National Anthem Author</span>
+            <span class="person-tag poet">Born in Debre Elias</span>
+            <span class="person-tag poet">Parliamentarian</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. BELAY ZELEKE -->
+      <div class="person-card patriot">
+        <div class="person-avatar patriot">
+          <div class="person-icon">⚔</div>
+          <div class="person-era">1912 – 1945</div>
+        </div>
+        <div class="person-body">
+          <div class="person-role patriot">Arbegna · Patriot Leader · National Hero</div>
+          <div class="person-name">Belay Zeleke</div>
+          <div class="person-amharic">በላይ ዘለቀ</div>
+          <div class="person-dates">Born: 1912 · Died: March 27, 1945</div>
+          <p class="person-bio">
+            One of the most legendary Ethiopian patriots of the Italian occupation era, Belay Zeleke
+            was born in the <strong style="color:#CE93D8">Gojjam Province</strong> and became the fearsome commander of guerrilla
+            resistance forces across Gojjam and Wällo during and after the Italian occupation (1936–41).
+            Known as the "Robin Hood of Gojjam," he was a fierce defender of Ethiopian sovereignty
+            and the rights of the ordinary people.
+          </p>
+          <div class="person-quote">
+            "Belay Zeleke was the Ethiopian leader of the patriots in Gojjam and Wällo, who participated
+            in the resistance against the Italians during the occupation." — Wikipedia / Ethiopian Records
+          </div>
+          <p class="person-bio">
+            Fighting with immense bravery against the Italian fascist forces, Belay Zeleke became
+            a symbol of popular resistance and Ethiopian national pride in Gojjam. Even after liberation,
+            he continued to challenge authorities he perceived as unjust. He was executed in 1945 under
+            the Imperial government. He is revered today as a <strong style="color:#CE93D8">national martyr and folk hero</strong>,
+            his legend living on in Gojjam oral tradition and song.
+          </p>
+          <div class="person-tags">
+            <span class="person-tag patriot">Arbegna Patriot</span>
+            <span class="person-tag patriot">Gojjam Resistance</span>
+            <span class="person-tag patriot">Anti-Italian War</span>
+            <span class="person-tag patriot">National Hero</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. DEJAZMACH MENGESHA JEMBERE -->
+      <div class="person-card patriot">
+        <div class="person-avatar patriot">
+          <div class="person-icon">🛡</div>
+          <div class="person-era">1884 – 1950</div>
+        </div>
+        <div class="person-body">
+          <div class="person-role patriot">Dejazmach · Arbegna · Governor of Gojjam</div>
+          <div class="person-name">Dejazmach Mengesha Jembere</div>
+          <div class="person-amharic">ደጃዝማች መንገሻ ጀምበሬ</div>
+          <div class="person-dates">Born: May 24, 1884 · Died: August 15, 1950</div>
+          <p class="person-bio">
+            A distinguished nobleman and Patriot commander from <strong style="color:#CE93D8">Gojjam Province</strong>, Dejazmach
+            Mengesha Jembere led a proud contingent of Gojjam warriors at the Battle of Shire (1936)
+            against the invading Italian fascist forces. When Ethiopia fell to Italian occupation, he
+            returned to Gojjam and organised a resistance movement of some 5,000 fighters.
+          </p>
+          <div class="person-quote">
+            "Dejazmach Mengesha Jembere mobilized an army of around 5,000 and harassed Italian units
+            in Gojjam from mid to late 1937, keeping the fire of resistance burning." — Ethiopian history
+          </div>
+          <p class="person-bio">
+            His guerrilla campaign against the Italians in Gojjam was a significant chapter in Ethiopia's
+            liberation struggle. After the liberation of Ethiopia in 1941, Mengesha Jembere was appointed
+            <strong style="color:#CE93D8">Deputy Governor of Gojjam</strong> — a recognition of his heroic contribution to the nation's freedom.
+            He remains a celebrated figure in the Gojjam region's historical memory.
+          </p>
+          <div class="person-tags">
+            <span class="person-tag patriot">WWII Resistance</span>
+            <span class="person-tag patriot">Gojjam Arbegna</span>
+            <span class="person-tag patriot">Deputy Governor</span>
+            <span class="person-tag patriot">National Patriot</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. THE DEBRE ELIAS MONASTERY SCHOLARS -->
+      <div class="person-card author">
+        <div class="person-avatar author" style="background:linear-gradient(135deg,#1a3a28,#2D6A4F);">
+          <div class="person-icon">🏛</div>
+          <div class="person-era">Ancient – Present</div>
+        </div>
+        <div class="person-body">
+          <div class="person-role author">Spiritual Centre of Learning</div>
+          <div class="person-name">Debre Elias Monastery</div>
+          <div class="person-amharic">ደብረ ኤልያስ ገዳም</div>
+          <div class="person-dates">The Ancient Cradle of Gojjam Scholarship</div>
+          <p class="person-bio">
+            More than the birthplace of great individuals, the <strong style="color:#A5D6A7">Debre Elias Monastery</strong>
+            has for centuries been one of Gojjam's most revered centres of Ethiopian Orthodox learning —
+            a place where countless scholars, priests, and poets received their formation in Ge'ez,
+            Zema, Kenie, and the sacred traditions of the Ethiopian church.
+          </p>
+          <div class="person-quote">
+            "Haddis studied at the renowned monasteries of Debre Elias, Debre Worq, and Dima.
+            Abune Tewoflos studied and served at the Monastery of Debre Elias.
+            Yoftahe Nigussie was born and educated at Debre Gennet Elyas."
+          </div>
+          <p class="person-bio">
+            Three of Ethiopia's greatest figures — a Patriarch, a novelist, and a playwright — all
+            received their early formation in this sacred monastery. Debre Elias is therefore not
+            merely a place of worship, but a <strong style="color:#A5D6A7">font of Ethiopian civilisation</strong> that shaped
+            the nation's literature, church, music, and national identity across generations.
+          </p>
+          <div class="person-tags">
+            <span class="person-tag author">Centre of Learning</span>
+            <span class="person-tag author">Ge'ez & Kenie</span>
+            <span class="person-tag author">Heritage Site</span>
+            <span class="person-tag author">Pilgrimage Destination</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="timeline-strip fade-in">
+      <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--gold-light);margin-bottom:40px;text-align:center;">
+        Historical Timeline of Notable Contributions
+      </h3>
+      <div class="timeline-line"></div>
+      <div class="timeline-events">
+        <div class="timeline-event">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">~1894</div>
+          <div class="timeline-desc">Yoftahe Nigussie born at Debre Elias</div>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">1910</div>
+          <div class="timeline-desc">Abune Tewoflos born at Debre Elias Parish</div>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">1910</div>
+          <div class="timeline-desc">Haddis Alemayehu born; educated at Debre Elias Monastery</div>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">1930</div>
+          <div class="timeline-desc">Yoftahe authors Ethiopia's Imperial National Anthem</div>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">1935–41</div>
+          <div class="timeline-desc">Gojjam patriots resist Italian occupation</div>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">1968</div>
+          <div class="timeline-desc">Haddis publishes ፍቅር እስከ መቃብር — Ethiopia's greatest novel</div>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">1971</div>
+          <div class="timeline-desc">Abune Tewoflos enthroned as 2nd Patriarch of Ethiopia</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERITAGE BANNER -->
+    <div class="history-banner fade-in">
+      <div class="history-banner-ico">🌟</div>
+      <div class="history-banner-text">
+        <strong>A Woreda that shaped a nation:</strong> From the ancient monastic walls of Debre Elias Monastery
+        emerged Ethiopia's most celebrated Orthodox Patriarch, the Father of Ethiopian literature, the pioneer of
+        Amharic theatre and composer of the national anthem — alongside brave patriots who gave their lives
+        defending Ethiopia's sovereignty. This is the living heritage of Debre Elias Woreda.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DEMOGRAPHICS -->
+<section id="demographics">
+  <div class="section-inner">
+    <div class="demo-grid fade-in">
+      <div>
+        <p class="section-label" style="color:var(--gold-light)">Our People</p>
+        <h2 class="section-title light">Demographics</h2>
+        <div class="divider"></div>
+        <p style="font-size:15px;color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:32px;">
+          Based on the 2007 national census conducted by the Central Statistical Agency (CSA) of Ethiopia,
+          Debre Elias Woreda had a total population of 82,150. The estimated population for 2010 reached
+          approximately 89,665.
+        </p>
+        <div class="demo-chart">
+          <div class="bar-row">
+            <div class="bar-label">Male Population — 41,109 (50.04%)</div>
+            <div class="bar-track"><div class="bar-fill" style="width:50%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Female Population — 41,041 (49.96%)</div>
+            <div class="bar-track"><div class="bar-fill" style="width:49.9%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Urban Inhabitants — 7,928 (9.65%)</div>
+            <div class="bar-track"><div class="bar-fill" style="width:9.65%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Orthodox Christian — 98.94%</div>
+            <div class="bar-track"><div class="bar-fill" style="width:98.94%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Muslim — 1.01%</div>
+            <div class="bar-track"><div class="bar-fill" style="width:1.01%"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-cards">
+        <div class="demo-card">
+          <div class="demo-card-ico">👥</div>
+          <div class="demo-card-num">82,150</div>
+          <div class="demo-card-desc">Total Population (2007)</div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-card-ico">📈</div>
+          <div class="demo-card-num">89,665</div>
+          <div class="demo-card-desc">Estimated Pop. (2010)</div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-card-ico">🏠</div>
+          <div class="demo-card-num">9,814</div>
+          <div class="demo-card-desc">Rural Households</div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-card-ico">⛪</div>
+          <div class="demo-card-num">98.94%</div>
+          <div class="demo-card-desc">Ethiopian Orthodox</div>
+        </div>
+        <div class="demo-card" style="grid-column:span 2;">
+          <div class="demo-card-ico">🗣</div>
+          <div class="demo-card-num">Amharic</div>
+          <div class="demo-card-desc">Primary Language — Amhara Ethnic Group</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <p class="section-label">Public Sector</p>
+    <h2 class="section-title">Government Services</h2>
+    <div class="divider"></div>
+    <p class="section-intro">
+      The Debre Elias Woreda administration provides a range of essential public services
+      to residents across all kebeles.
+    </p>
+    <div class="services-grid fade-in">
+      <div class="service-card">
+        <div class="service-ico">🏫</div>
+        <div class="service-title">Education</div>
+        <div class="service-desc">Primary and secondary schools across rural kebeles providing quality education to children in the woreda.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-ico">🏥</div>
+        <div class="service-title">Health Services</div>
+        <div class="service-desc">Health centres and posts delivering primary healthcare, maternal care, and disease prevention programs.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-ico">🌾</div>
+        <div class="service-title">Agriculture Office</div>
+        <div class="service-desc">Woreda Agriculture and Rural Development office supporting farmers with extension services and inputs.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-ico">💧</div>
+        <div class="service-title">Water & Sanitation</div>
+        <div class="service-desc">Rural water supply and sanitation infrastructure development serving communities across the woreda.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-ico">🛣</div>
+        <div class="service-title">Roads & Infrastructure</div>
+        <div class="service-desc">Rural road construction and maintenance connecting kebeles to the woreda town and market centres.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-ico">⚖️</div>
+        <div class="service-title">Justice & Courts</div>
+        <div class="service-desc">Woreda courts and social courts providing access to justice for residents at the kebele level.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-ico">💰</div>
+        <div class="service-title">Finance & ACSI</div>
+        <div class="service-desc">Amhara Credit and Saving Institution (ACSI) and other microfinance services supporting farmers and traders.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-ico">🌍</div>
+        <div class="service-title">Environment Office</div>
+        <div class="service-desc">Natural resources management, soil conservation, and environmental protection programs.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMINISTRATION -->
+<section id="administration" class="pattern-bg">
+  <div class="section-inner">
+    <p class="section-label" style="color:var(--gold-light)">Governance</p>
+    <h2 class="section-title light">Administration</h2>
+    <div class="divider"></div>
+    <div class="admin-grid fade-in">
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--gold-light);margin-bottom:20px;">Woreda Administrative Facts</h3>
+        <ul class="admin-list">
+          <li><span>Administrative Type</span><strong>Woreda (District)</strong></li>
+          <li><span>Zone</span><strong>Misraq Gojjam (East Gojjam)</strong></li>
+          <li><span>Region</span><strong>Amhara National Regional State</strong></li>
+          <li><span>Country</span><strong>Federal Democratic Republic of Ethiopia</strong></li>
+          <li><span>Woreda Council</span><strong>Elected Local Council</strong></li>
+          <li><span>Sub-units</span><strong>Kebeles (Wards)</strong></li>
+          <li><span>Previously Part of</span><strong>Machakel Woreda</strong></li>
+          <li><span>Area</span><strong>1,165.65 km² (450.06 sq mi)</strong></li>
+        </ul>
+        <p style="font-size:13px;color:rgba(239, 234, 234, 0.4);margin-top:18px;line-height:1.7;">
+          The woreda is governed by an elected council and cabinet (executive committee), 
+          along with a social court and development and security staff. Each kebele under 
+          the woreda is responsible for education, healthcare, agriculture, water, and rural roads.
+        </p>
+      </div>
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--gold-light);margin-bottom:20px;">Notable Kebeles (Sample)</h3>
+        <p style="font-size:14px;color:rgba(255,255,255,.55);margin-bottom:18px;line-height:1.7;">
+          Debre Elias Woreda is divided into multiple kebeles. Among those documented in research:
+        </p>
+        <div style="margin-bottom:20px;">
+          <span class="kebele-tag">Gofichema</span>
+          <span class="kebele-tag">Genet</span>
+          <span class="kebele-tag">Dejiba</span>
+          <span class="kebele-tag">Elias Town</span>
+          <span class="kebele-tag">+ More Kebeles</span>
+        </div>
+        <div style="background:rgba(201,147,58,.08);border:1px solid rgba(201,147,58,.2);padding:22px;border-radius:3px;margin-top:20px;">
+          <p style="color:var(--gold-light);font-family:'Playfair Display',serif;font-size:16px;margin-bottom:10px;">How Kebeles Work</p>
+          <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.8;">
+            Each kebele has an elected council, a cabinet, a social court, and development staff.
+            They are the primary point of contact for citizens and deliver basic education, primary 
+            health care, agricultural extension, water supply, and rural road services.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">Contact the Woreda</h2>
+    <div class="divider"></div>
+    <div class="contact-grid fade-in">
+      <div class="contact-info">
+        <p style="font-size:15px;color:var(--grey);line-height:1.8;margin-bottom:32px;">
+          For inquiries, official communications, or information about services in
+          Debre Elias Woreda, please reach out to the woreda administration office.
+        </p>
+        <div class="contact-item">
+          <div class="contact-ico">📍</div>
+          <div class="contact-detail">
+            <strong>Address</strong>
+            Debre Elias Town (Elias)<br/>
+            Misraq Gojjam Zone, Amhara Region<br/>
+            Federal Democratic Republic of Ethiopia
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-ico">🏛</div>
+          <div class="contact-detail">
+            <strong>Woreda Administration</strong>
+            Debre Elias Woreda Administration Office<br/>
+            Misraq Gojjam Zone Office — East Gojjam
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-ico">🌾</div>
+          <div class="contact-detail">
+            <strong>Agriculture Office</strong>
+            Debre Elias Woreda Agriculture and<br/>Rural Development Office
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-ico">🗺</div>
+          <div class="contact-detail">
+            <strong>Coordinates</strong>
+            Approximately 10°19′N 37°43′E<br/>
+            ~335 km northwest of Addis Ababa
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--earth);margin-bottom:24px;">Send a Message</h3>
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-input" placeholder="Your full name" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="your@email.com" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Subject</label>
+          <input type="text" class="form-input" placeholder="Topic of your inquiry" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-input" placeholder="Write your message here..."></textarea>
+        </div>
+        <button class="form-btn">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Debre Elias Woreda</div>
+        <div class="footer-brand-amharic">ደብረ ኤልያስ ወረዳ</div>
+        <p class="footer-about">
+          Official online portal of Debre Elias Woreda — part of the Misraq Gojjam Zone,
+          Amhara National Regional State, Federal Democratic Republic of Ethiopia.
+          Committed to transparent governance, sustainable development, and the wellbeing
+          of all residents.
+        </p>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#overview">About the Woreda</a></li>
+          <li><a href="#geography">Geography</a></li>
+          <li><a href="#tourism">Tourism & Heritage</a></li>
+          <li><a href="#agriculture">Agriculture</a></li>
+          <li><a href="#notable">Notable People</a></li>
+          <li><a href="#demographics">Demographics</a></li>
+          <li><a href="#services">Public Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Key Resources</div>
+        <ul class="footer-links">
+          <li><a href="#administration">Administration</a></li>
+          <li><a href="#minerals">Natural Resources</a></li>
+          <li><a href="#contact">Contact Office</a></li>
+          <li><a href="#">Amhara Region Gov.</a></li>
+          <li><a href="#">Misraq Gojjam Zone</a></li>
+          <li><a href="#">CSA Ethiopia</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        © 2024 Debre Elias Woreda Administration · Amhara Region · Ethiopia
+      </div>
+      <div class="footer-flag">
+        <div class="flag-strip" style="background:#078930;"></div>
+        <div class="flag-strip" style="background:#FCDD09;"></div>
+        <div class="flag-strip" style="background:#DA121A;"></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Smooth nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) cur = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + cur
+        ? 'var(--gold-light)' : '';
+    });
+  });
+
+  // Bar animation on scroll
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.bar-fill').forEach(bar => {
+          const w = bar.style.width;
+          bar.style.width = '0';
+          setTimeout(() => { bar.style.width = w; }, 100);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  const demoSection = document.getElementById('demographics');
+  if (demoSection) barObserver.observe(demoSection);
+
+  // Contact form mock submit
+  document.querySelector('.form-btn').addEventListener('click', () => {
+    const name = document.querySelector('input[placeholder="Your full name"]').value;
+    if (name) {
+      alert('✅ Thank you, ' + name + '! Your message has been received. The Debre Elias Woreda Office will respond shortly.');
+    } else {
+      alert('Please fill in your name before submitting.');
+    }
+  });
+</script>
+</body>
+</html>
